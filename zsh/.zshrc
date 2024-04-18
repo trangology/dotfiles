@@ -2,16 +2,16 @@ export PATH=/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bi
 export PATH=$PATH:/usr/local/go/bin 
 export PATH=$PATH:$GOPATH/bin
 
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# add syntax highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# .zshrc
+### configs for the `Pure` prompt
 fpath+=(/opt/homebrew/share/zsh/site-functions)
-
 autoload -U promptinit; promptinit
 
 # optionally define some options
@@ -27,5 +27,3 @@ zstyle ':prompt:pure:prompt:*' color cyan
 zstyle :prompt:pure:git:stash show yes
 
 prompt pure
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
