@@ -7,23 +7,21 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# add syntax highlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-### configs for the `Pure` prompt
+### configs for the `Pure` prompt: https://github.com/sindresorhus/pure
 fpath+=(/opt/homebrew/share/zsh/site-functions)
 autoload -U promptinit; promptinit
 
-# optionally define some options
-PURE_CMD_MAX_EXEC_TIME=10
-
 # change the path color
-zstyle :prompt:pure:path color white
+zstyle :prompt:pure:path color cyan
 
-# change the color for both `prompt:success` and `prompt:error`
-zstyle ':prompt:pure:prompt:*' color cyan
+# change the git:dirty color
+zstyle :prompt:pure:git:dirty color red
 
 # turn on git stash status
 zstyle :prompt:pure:git:stash show yes
 
 prompt pure
+
+# add syntax highlighting for zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
